@@ -12,7 +12,7 @@ class Home extends Component {
   }
 
   onSubmitBar = () => {
-    fetch('http://localhost:3000/bardata', {
+    fetch('https://infinite-shore-16170.herokuapp.com/bardata', {
       method: 'get'
     })
     .then(response => response.json())
@@ -23,7 +23,7 @@ class Home extends Component {
   }
 
   onSubmitPie = () => {
-    fetch('http://localhost:3000/piedata', {
+    fetch('https://infinite-shore-16170.herokuapp.com/piedata', {
       method: 'get'
     })
     .then(response => response.json())
