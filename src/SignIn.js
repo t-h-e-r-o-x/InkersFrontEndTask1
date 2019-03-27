@@ -29,11 +29,9 @@ onSubmitSignIn = () => {
   .then( response => response.json())
   .then( auth => {
     if(auth == "In"){
-      console.log(auth);
       this.props.onRouteChange('home');
     }
     else{
-      console.log("You're out");
       this.props.onRouteChange('wrong');
     }
   })
