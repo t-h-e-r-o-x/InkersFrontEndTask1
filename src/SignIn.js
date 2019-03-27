@@ -9,16 +9,18 @@ class SignIn extends Component {
     }
   }
 
+//to update the username for the state
   onUserChange = (event) => {
     this.setState({signInUser: event.target.value})
   }
-
+//to update the password for the state
   onPasswordChange = (event) => {
     this.setState({signInPassword: event.target.value})
   }
 
+//function that is carried out on clicking submit
 onSubmitSignIn = () => {
-  fetch("https://infinite-shore-16170.herokuapp.com/signin",{
+  fetch("https://infinite-shore-16170.herokuapp.com/signin",{ //call to server
     method: 'post',
     headers : {'Content-Type':'application/json'},
     body: JSON.stringify({
@@ -28,7 +30,7 @@ onSubmitSignIn = () => {
   })
   .then( response => response.json())
   .then( auth => {
-    if(auth == "In"){
+    if(auth == "In"){  //checking response from server and changing "route" variable(in App.js state object) accordingly
       this.props.onRouteChange('home');
     }
     else{

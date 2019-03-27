@@ -11,24 +11,24 @@ class Home extends Component {
     }
   }
 
+//when generate bar graph is clicked
   onSubmitBar = () => {
-    fetch('https://infinite-shore-16170.herokuapp.com/bardata', {
+    fetch('https://infinite-shore-16170.herokuapp.com/bardata', { //call to server to return bar graph plotting points
       method: 'get'
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       this.setState({graphName:'bar', graphData: data});
     })
   }
 
+//when generate piechart is clicked
   onSubmitPie = () => {
-    fetch('https://infinite-shore-16170.herokuapp.com/piedata', {
+    fetch('https://infinite-shore-16170.herokuapp.com/piedata', { //call to server to return piechart plotting points
       method: 'get'
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       this.setState({graphName:'pie', graphData: data});
     })
   }

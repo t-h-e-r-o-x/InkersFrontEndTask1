@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+//simple navigation panel to dispay "sign out" once user logs in
 const Navigation = ({onRouteChange, isSignedIn}) => {
   if(isSignedIn){
     return(

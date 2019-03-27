@@ -6,6 +6,7 @@ import Particles from "react-particles-js";
 import Wrong from "./Wrong";
 import './App.css';
 
+//for particles background
 const particlesOptions = {
   particles: {
                   number:{
@@ -18,6 +19,7 @@ const particlesOptions = {
             	}
 }
 
+//default state of the app upon rendering
 const initialState = {
   isSignedIn: false,
   route: 'signin',
@@ -29,10 +31,12 @@ class App extends Component {
     this.state = initialState;
   }
 
+//setting document title
   componentDidMount(){
     document.title = "InkersTask-SharanChandra";
   }
 
+//to keep track of which page the user should advance to
   onRouteChange = (data) => {
     if(data === 'signout')
     this.setState(initialState);
@@ -53,12 +57,12 @@ class App extends Component {
       <div className = "App">
         <Particles className = "particles" params = {particlesOptions}/>
         <Navigation isSignedIn = {this.state.isSignedIn} onRouteChange = {this.onRouteChange} />
-        {this.state.route === "signin"?
+        {this.state.route === "signin"? //check if sign in page is required to be rendered
           <SignIn onRouteChange = {this.onRouteChange}/>
-        :(this.state.route === "wrong"?
+        :(this.state.route === "wrong"? //check if wrong credentials page is required to be rendered
         <Wrong onRouteChange = {this.onRouteChange}/>
         :
-        <Home />
+        <Home /> //render home page if none of the above conditions are matched
       )
       }
       </div>

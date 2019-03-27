@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {
   BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-} from 'recharts';
+} from 'recharts'; //import BarGraph from Recharts Library
 
 class BarGraph extends Component{
   constructor(props){

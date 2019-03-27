@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {
   ResponsiveContainer, PieChart, Pie, Legend, Tooltip,
-} from 'recharts';
+} from 'recharts'; //import Piechart from Recharts Library
 
 class Piechart extends Component {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/k9jkog04/';
